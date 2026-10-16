@@ -532,7 +532,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 @media (max-width: 640px) {
-  .site-header { align-items: center; padding: 32px 24px 23px; }
+  .site-header { align-items: center; padding: 24px 24px 23px; }
   .site-header .logo { margin-right: auto; }
   .site-header .logo img { width: 200px; }
   .menu-toggle { display: block; width: 48px; height: 48px; }
