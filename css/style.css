@@ -298,29 +298,37 @@ img { display: block; max-width: 100%; height: auto; }
   padding-right: 320px;
 }
 .about__body {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, min(46rem, 55%)) minmax(0, 1fr);  /* text capped, photos take the rest */
   gap: 48px;
-  align-items: stretch;
+  align-items: start;
 }
 .about__text {
-  flex: 1;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px; Figma 24px, scaled 0.86 */
+  font-size: clamp(1rem, 1.4vw, 1.29rem);
   line-height: 1.5;
   letter-spacing: -0.022em;
   color: var(--eyebrow);
 }
 .about__text p { margin-bottom: 1.5em; }
 .about__text p:last-child { margin-bottom: 0; }
-.about__photos {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+
+.about__photos-wrap {
+  position: sticky;      /* photos stay in view while the long text scrolls */
+  top: 24px;
 }
-.about__photos li { flex: 1; display: flex; }
+.about__photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(12px, 1.5vw, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.about__photos li { aspect-ratio: 3 / 4; }
 .about__photos img { width: 100%; height: 100%; object-fit: cover; }
+.bw-image { filter: grayscale(100%); }
 
 /* Clients band */
 .clients {
@@ -551,6 +559,9 @@ img { display: block; max-width: 100%; height: auto; }
   .contact-hero { padding: 56px var(--pad-x); }
   .contact-hero__inner { max-width: none; }
   .collaborate { flex-direction: column; gap: 32px; }
+
+  .about__body { grid-template-columns: 1fr; gap: 32px; }
+  .about__photos-wrap { position: static; }
 }
 
 /* ---------- Phone ---------- */
