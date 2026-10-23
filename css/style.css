@@ -828,7 +828,7 @@ img { height: auto; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 24px var(--pad-x) 56px;
+  padding: 24px var(--pad-x) 32px;
   border-top: 2px solid var(--main-headings);
 }
 .site-footer .logo {
@@ -898,10 +898,14 @@ img { height: auto; }
 
 /* Full-screen overlay (a modal <dialog>: traps focus, closes on Escape) */
 .menu-overlay {
+  position: fixed;
+  inset: 0;
   width: 100%;
   max-width: none;
   height: 100dvh;
   max-height: none;
+  overflow: hidden;              /* fixed full-screen panel: never scrolls */
+  overscroll-behavior: contain;
   padding: 0;
   border: 0;
   background: var(--menu-bg);
@@ -911,7 +915,8 @@ img { height: auto; }
 .menu-overlay::backdrop { background: var(--menu-bg); }
 .menu-overlay :focus-visible { outline-color: var(--menu-fg); }
 .menu-overlay:focus { outline: none; }   /* focus lands on the panel when it opens; no ring needed there */
-body:has(.menu-overlay[open]) { overflow: hidden; }
+html:has(.menu-overlay[open]),
+body:has(.menu-overlay[open]) { overflow: hidden; }   /* lock the page behind it (html too, for iOS) */
 
 .menu-overlay__header {
   display: flex;
@@ -935,9 +940,9 @@ body:has(.menu-overlay[open]) { overflow: hidden; }
 .menu-overlay__list li:last-child { flex: 1; }
 .menu-overlay__list a {
   display: block;
-  padding: 20px 16px;
+  padding: clamp(12px, 2.3dvh, 20px) 16px;   /* shrink on short screens so everything fits */
   font-family: var(--font-head);
-  font-size: 48px;
+  font-size: clamp(32px, 5.5dvh, 48px);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.022em;       /* -1.056px @48px */
@@ -956,6 +961,11 @@ body:has(.menu-overlay[open]) { overflow: hidden; }
 .site-footer--menu { border-top-color: var(--menu-fg); }
 .site-footer--menu .footer-list a { color: inherit; }
 .site-footer--menu .social img { background: var(--menu-fg); }
+
+/* Very short screens (e.g. landscape): drop the menu footer; the page footer has the same links */
+@media (max-height: 560px) {
+  .site-footer--menu { display: none; }
+}
 
 /* Desktop and tablet never show the overlay */
 @media (min-width: 641px) {
