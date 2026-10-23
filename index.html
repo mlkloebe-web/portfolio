@@ -5,11 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Madison Kloeber | Visual Designer</title>
-  <meta name="description" content="Portfolio of visual design work by Madison Kloeber.">
+  <meta name="description" content="Madison Kloeber is a visual designer focused on web, UI and accessible design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600&family=Nunito+Sans:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Favicon and app icons -->
@@ -20,7 +19,7 @@
   <meta name="apple-mobile-web-app-title" content="Madison Kloeber">
   <link rel="manifest" href="favicon-package/site.webmanifest">
 
-<script src="js/main.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -34,15 +33,15 @@
     </a>
 
     <nav aria-label="Main">
-      <ul class="nav-list">
+      <ul class="nav-list" id="main-nav" role="list">
         <li><a href="index.html" aria-current="page">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <img src="images/menu.svg" alt="Menu" width="48" height="48">
+    <button class="menu-toggle" aria-label="Toggle menu" aria-controls="main-nav" aria-expanded="false">
+      <img src="images/menu.svg" alt="" width="48" height="48">
     </button>
   </header>
 
@@ -55,8 +54,8 @@
         <div class="hero__intro">
           <h1 id="hero-title" class="hero__title">Visual Design <br> &amp; Digital Experiences</h1>
 
-          <p class="hero__text">I’m a visual designer with a background in professional communications. I’ve created brand, web and social content for the Production Designers Collective, an international community of film and television designers, and more.</p>
-            
+          <p class="hero__text">I’m a visual designer with a background in professional communications. I’ve created brand, web and social content for the Production Designers Collective, an international community of film and television designers, and for clients in the arts.</p>
+
           <p class="hero__text">I’m currently pursuing an M.S. in Graphic Information Technology at Arizona State University, focusing on UI and product design, with a particular interest in accessibility.</p>
 
         </div>
@@ -67,23 +66,21 @@
     </section>
 
     <!-- FEATURED WORK -->
-     <section class="featured-work" aria-labelledby="featured-work-heading">
+    <section class="featured-work" aria-labelledby="featured-work-heading">
       <h2 id="featured-work-heading">Featured Work</h2>
 
       <!-- Gathering -->
       <section class="work" id="gathering" aria-labelledby="gathering-heading">
-        <h3>Production Designers Gathering</h3>
-      
+        <h3 id="gathering-heading">Production Designers Gathering</h3>
         <p class="work__text">I designed a responsive website for the Production Designers Gathering, a biennial conference for film and television designers in Greece, from information architecture and content strategy in Figma to a launched build in Wix.</p>
-      
-        <a class="work__link" href="https://www.productiondesignersgathering.org/" target="_blank" rel="noopener">View the site</a>
+        <a class="work__link" href="gathering" target="_blank" rel="noopener">View the site <span class="visually-hidden">(opens in a new tab)</span></a>
       </section>
 
-      <!-- UX case study-->
+      <!-- UX case study -->
       <section class="work" id="ux" aria-labelledby="ux-heading">
         <h3 id="ux-heading">UX Case Study</h3>
         <p class="work__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <a class="work__link" href="https://www.madisonkloeber.com/ux-case-study/" target="_blank" rel="noopener">View the case study</a>
+        <a class="work__link" href="https://www.madisonkloeber.com/ux-case-study/" target="_blank" rel="noopener">View the case study <span class="visually-hidden">(opens in a new tab)</span></a>
       </section>
 
       <!-- Cinema Captioning -->
@@ -94,7 +91,7 @@
       </section>
     </section>
 
-  <!-- ADDITIONAL WORK -->
+    <!-- ADDITIONAL WORK -->
     <section class="additional-work" aria-labelledby="additional-work-heading">
       <h2 id="additional-work-heading">Additional Work</h2>
 
@@ -104,25 +101,28 @@
       <section class="work" id="brand" aria-labelledby="brand-heading">
         <h3 id="brand-heading">Brand Design</h3>
         <!-- Add gallery of 9 images for brand design content -->
+        <p class="work__text">Gallery coming soon.</p>
       </section>
 
       <!-- Web -->
       <section class="work" id="web" aria-labelledby="web-heading">
         <h3 id="web-heading">Web Design</h3>
         <!-- Add gallery of 9 images for web design content -->
+        <p class="work__text">Gallery coming soon.</p>
       </section>
 
       <!-- Social -->
       <section class="work" id="social" aria-labelledby="social-heading">
         <h3 id="social-heading">Social Media</h3>
         <!-- Add gallery of 9 images for social media content -->
+        <p class="work__text">Gallery coming soon.</p>
       </section>
     </section>
 
-<!-- CTA -->
+    <!-- CTA -->
     <section class="cta" aria-labelledby="cta-heading">
       <h2 id="cta-heading">Let's Connect</h2>
-      <p class="cta__text">I’m currently available for roles and projects in visual, web and UI/UX design. If you have a project in mind, I’d love to hear from you.</p>
+      <p class="cta__text">I’m currently available for roles and projects in visual, web and UI/UX design. If you have a role or project in mind, I’d love to hear from you.</p>
       <a class="cta__link" href="contact.html">Get in Touch</a>
     </section>
   </main>
@@ -134,23 +134,24 @@
     </a>
 
     <nav aria-label="Footer">
-      <ul class="footer-list">
+      <ul class="footer-list" role="list">
         <li><a href="index.html">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <ul class="social">
+    <ul class="social" role="list">
       <li>
         <a href="mailto:studio@madisonkloeber.com" rel="noopener">
           <img src="images/icon-mail.svg" alt="Email" width="48" height="48">
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/your-handle" rel="noopener">
+        <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
           <img src="images/icon-linkedin.svg" alt="LinkedIn" width="48" height="48">
         </a>
+      </li>
     </ul>
   </footer>
 
