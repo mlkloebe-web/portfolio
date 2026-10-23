@@ -958,18 +958,14 @@ body:has(.menu-overlay[open]) { overflow: hidden; }   /* lock the page behind it
 }
 
 /* Footer inside the overlay: the site footer in the page's menu colours */
-/* One compact row: Résumé left, social icons right */
-.site-footer--menu {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: 20px;
-  border-top-color: var(--menu-fg);
-}
-.site-footer.site-footer--menu nav,
-.site-footer.site-footer--menu .social { margin-top: 0; }   /* beats the page footer's phone spacing */
+.site-footer--menu { border-top-color: var(--menu-fg); }
 .site-footer--menu .footer-list a { color: inherit; }
 .site-footer--menu .social img { background: var(--menu-fg); }
+
+/* Very short screens (e.g. landscape): drop the menu footer; the page footer has the same links */
+@media (max-height: 560px) {
+  .site-footer--menu { display: none; }
+}
 
 /* Desktop and tablet never show the overlay */
 @media (min-width: 641px) {
