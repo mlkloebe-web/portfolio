@@ -941,7 +941,7 @@ body:has(.menu-overlay[open]) { overflow: hidden; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px var(--pad-x) 23px;   /* matches the phone site header */
+  padding: 8px var(--pad-x);   /* matches the phone site header */
   border-bottom: 2px solid var(--menu-fg);
 }
 /* Same logo box as the phone site header, so nothing shifts when the menu opens */
@@ -990,7 +990,7 @@ body:has(.menu-overlay[open]) { overflow: hidden; }
 @media (max-width: 640px) {
   :root { --pad-x: 24px; --gap: 10px; --grid-cols: 2; }
 
-  .site-header { flex-wrap: wrap; gap: 12px; align-items: center; padding: 16px var(--pad-x) 23px; }
+  .site-header { flex-wrap: wrap; gap: 12px; align-items: center; padding: 8px var(--pad-x); }   /* logo centred: 20px above and below */
   .site-header .logo { margin-right: auto; height: 48px; align-items: center; }
   .site-header .logo img { width: 201px; }
   .menu-toggle { display: block; width: 48px; height: 48px; }
