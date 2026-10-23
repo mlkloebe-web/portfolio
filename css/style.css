@@ -69,6 +69,9 @@ h1, h2, h3, h4, h5, h6 {
   --pad-x: 64px;   /* side margins (header + footer) */
   --gap: 40px;    /* gutters in all image grids */
   --grid-cols: 3; /* gallery columns; the CTA grid shares them so the two align */
+  --text-lead: clamp(1.25rem, 1rem + 0.5vw, 1.375rem);   /* 20px on phones → 22px wide; hero + work text */
+  --text-h2: clamp(2rem, 1.2rem + 2.2vw, 2.75rem);       /* 32px → 44px; section headings */
+  --text-h3: clamp(1.5rem, 1.1rem + 1vw, 2rem);          /* 24px → 32px; project headings, always below h2 */
 
   /*
    SCALE (~0.86 of the 1440 Figma frame): tuned down so the live
@@ -213,7 +216,7 @@ img { height: auto; }
 }
 
 .hero__text {
-  font-size: clamp(1.05rem, 1.5vw, 1.37rem);   /* ~22px; Figma 25.6px, scaled 0.86 */
+  font-size: var(--text-lead);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.022em;      /* -0.49px @22px */
@@ -236,7 +239,6 @@ img { height: auto; }
   color: var(--main-headings);
   text-decoration: none;
 }
-a.cta,
 .cta h2 {
   font-family: var(--font-head);
   font-size: clamp(1.7rem, 3.3vw, 3rem);   /* ~48px; Figma 56px, scaled 0.86 */
@@ -244,12 +246,11 @@ a.cta,
   line-height: 1;
   letter-spacing: -0.05em;        /* -2.4px @48px */
 }
-a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 
 .cta__text {
   max-width: 60ch;
   margin: 20px 0 28px;
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px */
+  font-size: var(--text-lead);   /* matches hero and work text */
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.022em;
@@ -263,14 +264,11 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   padding: 60px var(--pad-x);
   border-top: 2px solid var(--main-headings);
 }
-.cta--split .cta__body {
-  grid-column: 2 / -1;
-  container-type: inline-size;   /* lets the paragraph size itself to this column */
-}
+.cta--split h2 { white-space: nowrap; }   /* "Let's Connect" stays on one line */
+.cta--split .cta__body { grid-column: 2 / -1; }
 .cta--split .cta__text {
   max-width: none;               /* run to the right margin */
   margin-top: 0;
-  font-size: clamp(1rem, 2.6cqi, 1.75rem);   /* scales with the column width */
 }
 
 .cta__link {
@@ -278,33 +276,24 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   padding: 14px 24px;
   border: 2px solid var(--main-headings);
   border-radius: 12px;
-  font-family: var(--font-head);
+  background: var(--main-headings);   /* filled */
+  color: #fff;
+  font-family: var(--font-body);   /* all buttons use Nunito Sans */
   font-size: 1rem;              /* 16px */
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.022em;
-  text-transform: uppercase;
   text-decoration: none;
 }
-.cta__link:hover {
-  background: var(--main-headings);
-  color: #fff;
-}
-.cta__links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
-.cta__link--text {
-  border-color: transparent;
-  padding-inline: 0;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.cta__link--text:hover { background: none; color: inherit; text-decoration-thickness: 2px; }
+.cta__link:hover { opacity: 0.85; }   /* same hover as the Submit button */
+.cta__links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 
 /* ---------- Work sections ---------- */
 .featured-work > h2,
 .additional-work > h2 {
   padding: 60px var(--pad-x) 0;
   font-family: var(--font-head);
-  font-size: clamp(1.7rem, 3.05vw, 2.75rem);   /* ~44px; Figma 51.2px, scaled 0.86 */
+  font-size: var(--text-h2);
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.03em;
@@ -318,10 +307,10 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .work h3 {
   margin-bottom: 34px;
   font-family: var(--font-head);
-  font-size: clamp(1.25rem, 1.9vw, 1.7rem);     /* ~27px; Figma 32px, scaled 0.86 */
+  font-size: var(--text-h3);
   font-weight: 600;
   line-height: 1.4;
-  letter-spacing: -0.022em;      /* -0.6px @27px */
+  letter-spacing: -0.022em;
   text-transform: uppercase;
   color: var(--heading-dark);
 }
@@ -345,7 +334,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .work__text {
   max-width: 60ch;
   margin-bottom: 20px;
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px */
+  font-size: var(--text-lead);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.022em;
@@ -477,7 +466,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   color: var(--eyebrow);
 }
 .about__lead {
-  font-size: clamp(1.7rem, 3.05vw, 2.75rem);   /* ~44px; Figma 51.2px, scaled 0.86 */
+  font-size: var(--text-h2);   /* 32px → 44px */
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.03em;        /* -1.32px @44px */
@@ -493,7 +482,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .about__text {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: clamp(1rem, 1.4vw, 1.29rem);
+  font-size: var(--text-lead);   /* same size as Home's paragraphs */
   line-height: 1.5;
   letter-spacing: -0.022em;
   color: var(--eyebrow);
@@ -518,18 +507,19 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .bw-image { filter: grayscale(100%); }
 
 /* Clients band */
+/* Same column grid as Home's gallery/CTA: heading in column 1, list in the rest */
 .clients {
   border-bottom: 2px solid var(--main-headings);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  align-items: start;
+  gap: 24px var(--gap);
   padding: 69px var(--pad-x);
 }
 .clients h2 {
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: clamp(1.25rem, 1.9vw, 1.7rem);   /* ~27px */
+  font-size: var(--text-h3);
   line-height: 1.4;
   letter-spacing: -0.022em;
   text-transform: uppercase;
@@ -538,11 +528,13 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   flex-shrink: 0;
 }
 .clients__list {
-  display: flex;
-  flex-direction: column;
+  grid-column: 2 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));   /* two clients per line; long names wrap in their column */
+  gap: 4px var(--gap);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px */
+  font-size: var(--text-lead);
   line-height: 1.4;
   letter-spacing: -0.022em;
   color: var(--heading-dark);
@@ -564,7 +556,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .gallery h2 {
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: clamp(1.25rem, 1.9vw, 1.7rem);   /* ~27px */
+  font-size: var(--text-h3);
   line-height: 1.4;
   letter-spacing: -0.022em;
   text-transform: uppercase;
@@ -584,10 +576,8 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 }
 .gallery__link:hover { text-decoration-thickness: 2px; }
 
-/* About CTA: the design draws a top border (the portfolio band has none). */
-.about-page .cta {
-  border-top: 2px solid var(--main-headings);
-}
+/* "Let's Work Together" is longer than "Let's Connect": let it wrap within column 1 */
+.about-page .cta--split h2 { white-space: normal; }
 
 /* ---------- Case study page ---------- */
 .case-hero {
@@ -609,9 +599,9 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   color: var(--main-headings);
   text-underline-offset: 4px;
 }
-.case-hero__back::before { content: "← " / ""; }
+.case-hero__back::before { content: "←" / ""; margin-right: 0.35em; }
 .case-hero__title {
-  font-size: clamp(2rem, 3.05vw, 2.75rem);   /* ~44px, matches hero title */
+  font-size: var(--text-h2);
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.03em;
@@ -620,7 +610,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .case-hero .work__tag { margin-bottom: 0; }
 .case-hero__summary {
   max-width: 60ch;
-  font-size: clamp(1.05rem, 1.5vw, 1.37rem);   /* ~22px, matches hero text */
+  font-size: var(--text-lead);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.022em;
@@ -630,9 +620,9 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px var(--gap);
-  width: 100%;
-  margin: 12px 0;
-  padding: 24px 0;
+  align-self: stretch;
+  margin: 12px calc(-1 * var(--pad-x));   /* lines run edge to edge… */
+  padding: 24px var(--pad-x);             /* …while the content keeps the page margins */
   border-block: 2px solid var(--main-headings);
 }
 .case-meta dt {
@@ -663,7 +653,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .case-section + .case-section { border-top: 2px solid var(--main-headings); }
 .case-section h2 {
   font-family: var(--font-head);
-  font-size: clamp(1.25rem, 1.9vw, 1.7rem);   /* ~27px, matches project headings */
+  font-size: var(--text-h3);
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.022em;
@@ -681,7 +671,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .case-section h3:first-child { margin-top: 0; }
 .case-section__body p {
   max-width: 65ch;
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px */
+  font-size: var(--text-lead);
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.022em;
@@ -723,14 +713,14 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   color: var(--eyebrow);
 }
 .contact-hero__title {
-  font-size: clamp(1.7rem, 3.05vw, 2.75rem);   /* ~44px; Figma 51.2px, scaled 0.86 */
+  font-size: var(--text-h2);   /* 32px → 44px */
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.03em;        /* -1.32px @44px */
   color: var(--heading-dark);
 }
 .contact-hero__text {
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px; Figma 24px, scaled 0.86 */
+  font-size: var(--text-lead);   /* 20px → 22px */
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: -0.022em;
@@ -764,7 +754,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 .collaborate__heading {
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: clamp(1.25rem, 1.9vw, 1.7rem);   /* ~27px */
+  font-size: var(--text-h3);
   line-height: 1.4;
   letter-spacing: -0.022em;
   text-transform: uppercase;
@@ -779,7 +769,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   gap: 28px;
 }
 .collaborate__intro {
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px */
+  font-size: var(--text-lead);
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.022em;
@@ -797,7 +787,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   gap: 14px;
 }
 .contact-form__label {
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px */
+  font-size: var(--text-lead);
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.022em;
@@ -812,7 +802,7 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
   padding: 14px;
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px */
+  font-size: var(--text-lead);
   line-height: 1.4;
   letter-spacing: -0.022em;
   color: var(--heading-dark);
@@ -829,23 +819,9 @@ a.cta:hover { text-decoration: underline; text-underline-offset: 8px; }
 }
 
 .contact-form__submit {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 41px;           /* Figma 48px, scaled 0.86 */
-  padding: 7px 28px;      /* Figma py-8 px-32, scaled 0.86 */
-  background: #0e0a09;
-  color: #fff;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: clamp(1rem, 1.4vw, 1.29rem);   /* ~20.6px */
-  line-height: 1.4;
-  letter-spacing: -0.022em;
-  border: none;
-  border-radius: 7px;     /* Figma 8px, scaled 0.86 */
+  align-self: flex-start;   /* looks come from .cta__link */
   cursor: pointer;
 }
-.contact-form__submit:hover { opacity: 0.85; }
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -1004,18 +980,17 @@ body:has(.menu-overlay[open]) { overflow: hidden; }
   .hero__intro { align-items: flex-start; gap: 10px; }
   .tags { gap: 10px; }
   .tags a { font-size: 14px; padding: 8px 10px; border-width: 1.2px; border-radius: 8px; }
-  .hero__text { padding-right: 0; font-size: 20px; letter-spacing: -0.44px; }
+  .hero__text { padding-right: 0; }
 
   /* CTA */
   .cta { padding: 32px var(--pad-x); }
-  a.cta,
   .cta h2 { font-size: 35.84px; line-height: normal; letter-spacing: -1.792px; }
 
   /* Work: keep 2-column masonry on phone */
   .work { padding: 40px var(--pad-x) 26px; }
   .featured-work > h2,
-  .additional-work > h2 { padding-top: 40px; font-size: 32px; }
-  .work h3 { font-size: 20px; letter-spacing: -0.44px; margin-bottom: 24px; }
+  .additional-work > h2 { padding-top: 40px; }
+  .work h3 { margin-bottom: 24px; }
   .masonry { flex-direction: row; align-items: flex-start; }
   .masonry--2 {
     display: block;
@@ -1030,10 +1005,27 @@ body:has(.menu-overlay[open]) { overflow: hidden; }
 
   /* Additional work + case study */
   .work-grid { padding-top: 24px; }
+  /* Odd number of visible projects: the last one spans both columns (counts only unfiltered tiles) */
+  .work-grid__item:nth-last-child(1 of :not([hidden])):nth-child(odd of :not([hidden])) {
+    grid-column: 1 / -1;
+  }
   .cta--split { padding-block: 40px; }
+  .cta--split h2,
   .cta--split .cta__body { grid-column: 1 / -1; }   /* stacked: two columns are too narrow for the copy */
-  .filters { padding-top: 24px; }
+  /* Filters: an even, full-width row of 44px tap targets */
+  .filters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    padding-top: 24px;
+  }
+  .filters__btn { min-height: 44px; padding: 0 8px; }
+
+  /* Project tags: larger for small screens (still labels, not buttons) */
+  .work__tag { padding: 7px 12px; border-radius: 8px; font-size: 1rem; }   /* 16px */
   .case-hero { padding: 40px var(--pad-x); }
+  .case-hero__back { display: inline-flex; align-items: center; min-height: 44px; padding-block: 0; }   /* 44px tap target */
+  .case-hero .cta__link { align-self: stretch; text-align: center; }   /* full-width button, like Submit */
   .case-section { padding-block: 40px; }
 
   /* Footer */
@@ -1045,7 +1037,17 @@ body:has(.menu-overlay[open]) { overflow: hidden; }
   /* Other pages */
   .contact-hero { padding: 40px var(--pad-x); }
   .collaborate { padding: 40px var(--pad-x) 32px; }
+  .collaborate__heading,
   .collaborate__form { grid-column: 1 / -1; }   /* stacked, full width */
-  .contact-form__submit { width: 100%; }
+  .contact-form__submit { align-self: stretch; }   /* full width on phones */
+  .contact-hero__links a { display: inline-flex; align-items: center; min-height: 44px; padding-block: 0; }   /* 44px tap targets */
   .about__lead { padding-right: 0; }
+
+  /* About: Home's phone rhythm */
+  .about { padding-block: 40px; gap: 32px; }
+  .clients { padding-block: 40px; }
+  .clients h2,
+  .clients__list { grid-column: 1 / -1; }   /* stacked, full width */
+  .clients__list { grid-template-columns: 1fr; gap: 4px; }   /* one client per line */
+  .gallery { padding-block: 40px; }
 }
