@@ -7,7 +7,7 @@
   <meta name="description" content="Madison Kloeber is a visual designer with a background in professional communications who designs brand systems and digital experiences.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&family=Josefin+Sans:wght@500;600&family=Nunito+Sans:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Nunito+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Favicon and app icons -->
@@ -18,6 +18,7 @@
   <meta name="apple-mobile-web-app-title" content="Madison Kloeber">
   <link rel="manifest" href="favicon-package/site.webmanifest">
 
+  <script src="js/main.js" defer></script>
 </head>
 <body class="about-page">
 
@@ -26,7 +27,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <a class="logo" href="index.html">
-      <img src="images/logo.svg" alt="Madison Kloeber, home" width="265" height="32">
+      <img src="images/logo-dark.svg" alt="Madison Kloeber, home" width="201" height="24">
     </a>
 
     <nav aria-label="Main">
@@ -37,7 +38,58 @@
       </ul>
     </nav>
 
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <img src="images/menu.svg" alt="" width="48" height="48">
+    </button>
   </header>
+
+  <!-- MOBILE MENU: full-screen overlay opened by .menu-toggle (phone layout only) -->
+  <dialog class="menu-overlay" id="mobile-menu" aria-label="Menu" tabindex="-1">
+    <div class="menu-overlay__header">
+      <a class="logo" href="index.html">
+        <img src="images/logo-navy.svg" alt="Madison Kloeber, home" width="201" height="24">
+      </a>
+      <button class="menu-close" type="button" aria-label="Close menu">
+        <img src="images/menu-close-navy.svg" alt="" width="48" height="48">
+      </button>
+    </div>
+
+    <nav class="menu-overlay__nav" aria-label="Mobile">
+      <ul class="menu-overlay__list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer site-footer--menu">
+      <a class="logo" href="index.html">
+        <img src="images/logo-navy-small.svg" alt="Madison Kloeber, home" width="161" height="19">
+      </a>
+
+      <nav aria-label="Menu footer">
+        <ul class="footer-list" role="list">
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.pdf">Résumé <span class="visually-hidden">(PDF)</span></a></li>
+        </ul>
+      </nav>
+
+      <ul class="social" role="list">
+        <li>
+          <a href="mailto:studio@madisonkloeber.com" rel="noopener">
+            <img src="images/icon-mail.svg" alt="Email" width="40" height="40">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
+            <img src="images/icon-linkedin.svg" alt="LinkedIn" width="40" height="40">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </dialog>
 
   <main id="main">
 
@@ -56,7 +108,7 @@
 
           <p>Alongside my work, I’m pursuing an M.S. in Graphic Information Technology at Arizona State University’s Ira A. Fulton Schools of Engineering, where I’m building my skills in user interface and product design.</p>
 
-          <p>I’m especially interested in how design can make experiences more accessible and inclusive. I’ve volunteered with the USC Keck School of Medicine’s Bionic Ear Lab, supporting its Cochlear Implant (CI) Music Hour program, and this spring, my independent study at ASU will explore cinema captioning systems for Deaf and hard-of-hearing moviegoers.</p>
+          <p>I’m especially interested in how design can make experiences more accessible and inclusive. I’ve volunteered with the USC Keck School of Medicine’s Bionic Ear Lab, supporting its Cochlear Implant (CI) Music Hour program, and next spring, my independent study at ASU will explore cinema captioning systems for Deaf and hard-of-hearing moviegoers.</p>
 
           <p>When I’m not working on design projects, I love taking photos of the moon.</p>
         </div>
@@ -81,31 +133,30 @@
       </ul>
     </section>
 
-    <!-- GALLERY: masonry grid -->
-    <div class="gallery">
+    <!-- RECENT WORK: masonry grid -->
+    <section class="gallery" aria-labelledby="recent-work-heading">
+      <div class="gallery__head">
+        <h2 id="recent-work-heading">Recent Work</h2>
+        <a class="gallery__link" href="index.html#additional-work">See all work</a>
+      </div>
+
       <div class="masonry">
         <ul class="masonry__col" role="list">
           <li><img src="images/about-03.jpg" alt="Describe image 3" width="407" height="548" loading="lazy"></li>
           <li><img src="images/about-04.jpg" alt="Describe image 4" width="407" height="428" loading="lazy"></li>
-          <li><img src="images/about-05.jpg" alt="Describe image 5" width="407" height="682" loading="lazy"></li>
-          <li><img src="images/about-06.jpg" alt="Describe image 6" width="407" height="647" loading="lazy"></li>
         </ul>
 
         <ul class="masonry__col" role="list">
           <li><img src="images/about-07.jpg" alt="Describe image 7" width="407" height="371" loading="lazy"></li>
           <li><img src="images/about-08.jpg" alt="Describe image 8" width="407" height="679" loading="lazy"></li>
-          <li><img src="images/about-09.jpg" alt="Describe image 9" width="407" height="436" loading="lazy"></li>
-          <li><img src="images/about-10.jpg" alt="Describe image 10" width="407" height="819" loading="lazy"></li>
         </ul>
 
         <ul class="masonry__col" role="list">
           <li><img src="images/about-11.jpg" alt="Describe image 11" width="407" height="548" loading="lazy"></li>
           <li><img src="images/about-12.jpg" alt="Describe image 12" width="407" height="428" loading="lazy"></li>
-          <li><img src="images/about-13.jpg" alt="Describe image 13" width="407" height="682" loading="lazy"></li>
-          <li><img src="images/about-14.jpg" alt="Describe image 14" width="407" height="647" loading="lazy"></li>
         </ul>
       </div>
-    </div>
+    </section>
 
     <!-- CTA -->
     <a class="cta" href="contact.html">Let’s Work Together</a>
@@ -115,7 +166,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <a class="logo logo--footer" href="index.html">
-      <img src="images/logo.svg" alt="Madison Kloeber, home" width="201" height="24">
+      <img src="images/logo-dark.svg" alt="Madison Kloeber, home" width="201" height="24">
     </a>
 
     <nav aria-label="Footer">
@@ -123,6 +174,8 @@
         <li><a href="index.html">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <!-- TODO: add resume.pdf to the site root -->
+        <li><a href="resume.pdf">Résumé <span class="visually-hidden">(PDF)</span></a></li>
       </ul>
     </nav>
 
@@ -133,7 +186,7 @@
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/your-handle" rel="noopener">
+        <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
           <img src="images/icon-linkedin.svg" alt="LinkedIn" width="48" height="48">
         </a>
     </ul>
