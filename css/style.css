@@ -170,8 +170,9 @@ img { display: block; max-width: 100%; height: auto; }
   align-items: flex-start;
   gap: 20px;
 }
+
 .hero__title {
-  font-size: clamp(1.7rem, 3.05vw, 2.75rem);   /* ~44px; Figma 51.2px, scaled 0.86 */
+  font-size: clamp(2rem, 3.05vw, 2.75rem);   /* ~44px; Figma 51.2px, scaled 0.86 */
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: -0.03em;        /* -1.32px @44px */
