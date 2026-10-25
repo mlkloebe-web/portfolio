@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wildbloom | Madison Kloeber</title>
+  <meta name="description" content="Case study in progress: a spec admin tool and consumer app for the Wildbloom music festival.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Nunito+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon and app icons -->
+  <link rel="icon" type="image/png" href="favicon-package/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon-package/favicon.svg">
+  <link rel="shortcut icon" href="favicon-package/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-package/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Madison Kloeber">
+  <link rel="manifest" href="favicon-package/site.webmanifest">
+
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="case-page">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="images/logo-dark.svg" alt="Madison Kloeber, home" width="201" height="24">
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav-list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <img src="images/menu.svg" alt="" width="48" height="48">
+    </button>
+  </header>
+
+  <!-- MOBILE MENU: full-screen overlay opened by .menu-toggle (phone layout only) -->
+  <dialog class="menu-overlay" id="mobile-menu" aria-label="Menu" tabindex="-1">
+    <div class="menu-overlay__header">
+      <a class="logo" href="index.html">
+        <img src="images/logo-navy.svg" alt="Madison Kloeber, home" width="201" height="24">
+      </a>
+      <button class="menu-close" type="button" aria-label="Close menu">
+        <img src="images/menu-close-navy.svg" alt="" width="48" height="48">
+      </button>
+    </div>
+
+    <nav class="menu-overlay__nav" aria-label="Mobile">
+      <ul class="menu-overlay__list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer site-footer--menu">
+      <a class="logo" href="index.html">
+        <img src="images/logo-navy-small.svg" alt="Madison Kloeber, home" width="161" height="19">
+      </a>
+
+      <nav aria-label="Menu footer">
+        <ul class="footer-list" role="list">
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.pdf">Résumé <span class="visually-hidden">(PDF)</span></a></li>
+        </ul>
+      </nav>
+
+      <ul class="social" role="list">
+        <li>
+          <a href="mailto:studio@madisonkloeber.com">
+            <img src="images/icon-mail.svg" alt="Email" width="40" height="40">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
+            <img src="images/icon-linkedin.svg" alt="LinkedIn" width="40" height="40">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </dialog>
+
+  <main id="main">
+
+    <article class="case-study" aria-labelledby="case-title">
+
+      <!-- CASE HERO -->
+      <header class="case-hero">
+        <a class="case-hero__back" href="index.html#featured-work">Featured Work</a>
+        <h1 id="case-title" class="case-hero__title">Wildbloom Music Festival</h1>
+        <ul class="work__tags" role="list">
+          <li class="work__tag">UX/UI Design</li>
+          <li class="work__tag">Product Design</li>
+        </ul>
+        <p class="case-hero__summary">A spec concept for Wildbloom, a music festival, with two connected products: an admin tool for the festival team and a consumer app for attendees. <span class="case-todo">[The problem each product solves, and the context, e.g. a class]</span></p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Context</dt>
+            <dd>Spec Concept <span class="case-todo">[class or personal project]</span></dd>
+          </div>
+          <div>
+            <dt>Deliverables</dt>
+            <dd class="case-todo">[e.g. Research · Wireframes · Admin Tool · Mobile App · Prototype]</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd class="case-todo">[e.g. Figma · FigJam]</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd class="case-todo">[Year]</dd>
+          </div>
+        </dl>
+      </header>
+
+      <!-- TODO: the admin tool and consumer app together; add alt text describing it -->
+      <div class="case-figure" aria-hidden="true"></div>
+
+      <!-- Placeholder prompts (.case-todo) mark copy still to write -->
+
+      <!-- THE PROBLEM -->
+      <h2 id="problem-part-heading" class="case-part">The Problem</h2>
+
+      <section class="case-section" aria-labelledby="challenge-heading">
+        <h3 id="challenge-heading">The challenge</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[What festival staff and attendees struggle with, and why one system serves both]</p>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="research-heading">
+        <h3 id="research-heading">Research</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[How you learned about both user groups, and what you found]</p>
+          <ul>
+            <li class="case-todo">[Insight]</li>
+            <li class="case-todo">[Insight]</li>
+            <li class="case-todo">[Insight]</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- DESIGN -->
+      <h2 id="design-part-heading" class="case-part">Design</h2>
+
+      <section class="case-section" aria-labelledby="admin-heading">
+        <h3 id="admin-heading">Admin tool</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[What the festival team uses it for, key flows and design decisions]</p>
+          <!-- TODO: admin tool screens; add the <img> with alt text above the caption -->
+          <figure class="case-figure-wrap">
+            <div class="case-figure" aria-hidden="true"></div>
+            <figcaption class="case-todo">[Caption]</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="app-heading">
+        <h3 id="app-heading">Consumer app</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[What attendees use it for, key flows and design decisions]</p>
+          <!-- TODO: app screens; add the <img> with alt text above the caption -->
+          <figure class="case-figure-wrap">
+            <div class="case-figure" aria-hidden="true"></div>
+            <figcaption class="case-todo">[Caption]</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="testing-heading">
+        <h3 id="testing-heading">Testing and iteration</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[What you tested, what you learned and what you changed]</p>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="accessibility-heading">
+        <h3 id="accessibility-heading">Accessibility</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[How you designed for accessibility, e.g. contrast in bright outdoor light, touch targets, screen readers]</p>
+        </div>
+      </section>
+
+      <!-- REFLECTION -->
+      <section class="case-section case-section--reflection" aria-labelledby="reflection-heading">
+        <h2 id="reflection-heading" class="case-part">Reflection</h2>
+        <div class="case-section__body">
+          <p class="case-todo">[What you learned and what you would do differently next time]</p>
+          <p class="case-back"><a class="case-hero__back" href="index.html#featured-work">Back to Featured Work</a></p>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- CTA -->
+    <section class="cta cta--split" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Let’s Connect</h2>
+      <div class="cta__body">
+        <p class="cta__text">I’m open to full-time roles in visual and UI/UX design, as well as freelance brand and web projects. If you’re hiring or have a project in mind, I’d love to hear from you.</p>
+        <div class="cta__links">
+          <a class="cta__link" href="contact.html">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <a class="logo logo--footer" href="index.html">
+      <img src="images/logo-dark.svg" alt="Madison Kloeber, home" width="201" height="24">
+    </a>
+
+    <nav aria-label="Footer">
+      <ul class="footer-list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- TODO: add resume.pdf to the site root -->
+        <li><a href="resume.pdf">Résumé <span class="visually-hidden">(PDF)</span></a></li>
+      </ul>
+    </nav>
+
+    <ul class="social" role="list">
+      <li>
+        <a href="mailto:studio@madisonkloeber.com">
+          <img src="images/icon-mail.svg" alt="Email" width="48" height="48">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
+          <img src="images/icon-linkedin.svg" alt="LinkedIn" width="48" height="48">
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+</body>
+</html>

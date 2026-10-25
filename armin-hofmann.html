@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Armin Hofmann | Madison Kloeber</title>
+  <meta name="description" content="Case study in progress: a spec magazine concept on Armin Hofmann, with editorial and information design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Nunito+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon and app icons -->
+  <link rel="icon" type="image/png" href="favicon-package/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon-package/favicon.svg">
+  <link rel="shortcut icon" href="favicon-package/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-package/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Madison Kloeber">
+  <link rel="manifest" href="favicon-package/site.webmanifest">
+
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="case-page">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="images/logo-dark.svg" alt="Madison Kloeber, home" width="201" height="24">
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav-list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <img src="images/menu.svg" alt="" width="48" height="48">
+    </button>
+  </header>
+
+  <!-- MOBILE MENU: full-screen overlay opened by .menu-toggle (phone layout only) -->
+  <dialog class="menu-overlay" id="mobile-menu" aria-label="Menu" tabindex="-1">
+    <div class="menu-overlay__header">
+      <a class="logo" href="index.html">
+        <img src="images/logo-navy.svg" alt="Madison Kloeber, home" width="201" height="24">
+      </a>
+      <button class="menu-close" type="button" aria-label="Close menu">
+        <img src="images/menu-close-navy.svg" alt="" width="48" height="48">
+      </button>
+    </div>
+
+    <nav class="menu-overlay__nav" aria-label="Mobile">
+      <ul class="menu-overlay__list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer site-footer--menu">
+      <a class="logo" href="index.html">
+        <img src="images/logo-navy-small.svg" alt="Madison Kloeber, home" width="161" height="19">
+      </a>
+
+      <nav aria-label="Menu footer">
+        <ul class="footer-list" role="list">
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.pdf">Résumé <span class="visually-hidden">(PDF)</span></a></li>
+        </ul>
+      </nav>
+
+      <ul class="social" role="list">
+        <li>
+          <a href="mailto:studio@madisonkloeber.com">
+            <img src="images/icon-mail.svg" alt="Email" width="40" height="40">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
+            <img src="images/icon-linkedin.svg" alt="LinkedIn" width="40" height="40">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </dialog>
+
+  <main id="main">
+
+    <article class="case-study" aria-labelledby="case-title">
+
+      <!-- CASE HERO -->
+      <header class="case-hero">
+        <a class="case-hero__back" href="index.html#featured-work">Featured Work</a>
+        <h1 id="case-title" class="case-hero__title">Design Through the Decades: Armin Hofmann</h1>
+        <ul class="work__tags" role="list">
+          <li class="work__tag">Editorial Design</li>
+          <li class="work__tag">Information Design</li>
+        </ul>
+        <p class="case-hero__summary">A spec magazine concept created for a class, exploring the work of Swiss designer and educator Armin Hofmann. <span class="case-todo">[What the magazine covers, what you designed and the class it was for]</span></p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Context</dt>
+            <dd>Spec Concept · Class Project <span class="case-todo">[course]</span></dd>
+          </div>
+          <div>
+            <dt>Deliverables</dt>
+            <dd class="case-todo">[e.g. Cover · Spreads · Infographics]</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd class="case-todo">[Tools]</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd class="case-todo">[Year]</dd>
+          </div>
+        </dl>
+      </header>
+
+      <!-- TODO: cover or strongest spread; add alt text describing it -->
+      <div class="case-figure" aria-hidden="true"></div>
+
+      <!-- Placeholder prompts (.case-todo) mark copy still to write -->
+
+      <!-- THE BRIEF -->
+      <h2 id="brief-part-heading" class="case-part">The Brief</h2>
+
+      <section class="case-section" aria-labelledby="brief-heading">
+        <h3 id="brief-heading">The assignment</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[The class brief: what “Design Through the Decades” asked for and why you chose Hofmann]</p>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="research-heading">
+        <h3 id="research-heading">Research</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[What you studied in Hofmann’s work and how it shaped your design decisions]</p>
+          <!-- TODO: research or reference board -->
+          <div class="case-figure" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- DESIGN -->
+      <h2 id="design-part-heading" class="case-part">Design</h2>
+
+      <section class="case-section" aria-labelledby="editorial-heading">
+        <h3 id="editorial-heading">Editorial design</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[Your grid, typography and layout decisions, and how they reference Hofmann]</p>
+          <!-- TODO: spreads; add the <img> with alt text above the caption -->
+          <figure class="case-figure-wrap">
+            <div class="case-figure" aria-hidden="true"></div>
+            <figcaption class="case-todo">[Caption]</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="info-heading">
+        <h3 id="info-heading">Information design</h3>
+        <div class="case-section__body">
+          <p class="case-todo">[What information you visualized, e.g. a timeline of his career, and how you structured it]</p>
+          <!-- TODO: infographic or timeline -->
+          <div class="case-figure" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- REFLECTION -->
+      <section class="case-section case-section--reflection" aria-labelledby="reflection-heading">
+        <h2 id="reflection-heading" class="case-part">Reflection</h2>
+        <div class="case-section__body">
+          <p class="case-todo">[What you learned]</p>
+          <p class="case-back"><a class="case-hero__back" href="index.html#featured-work">Back to Featured Work</a></p>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- CTA -->
+    <section class="cta cta--split" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Let’s Connect</h2>
+      <div class="cta__body">
+        <p class="cta__text">I’m open to full-time roles in visual and UI/UX design, as well as freelance brand and web projects. If you’re hiring or have a project in mind, I’d love to hear from you.</p>
+        <div class="cta__links">
+          <a class="cta__link" href="contact.html">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <a class="logo logo--footer" href="index.html">
+      <img src="images/logo-dark.svg" alt="Madison Kloeber, home" width="201" height="24">
+    </a>
+
+    <nav aria-label="Footer">
+      <ul class="footer-list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- TODO: add resume.pdf to the site root -->
+        <li><a href="resume.pdf">Résumé <span class="visually-hidden">(PDF)</span></a></li>
+      </ul>
+    </nav>
+
+    <ul class="social" role="list">
+      <li>
+        <a href="mailto:studio@madisonkloeber.com">
+          <img src="images/icon-mail.svg" alt="Email" width="48" height="48">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
+          <img src="images/icon-linkedin.svg" alt="LinkedIn" width="48" height="48">
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+</body>
+</html>
