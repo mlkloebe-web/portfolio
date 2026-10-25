@@ -390,7 +390,7 @@ img { height: auto; }
 }
 
 /* Work gallery: filterable grid under Featured Work */
-.work-gallery { padding-bottom: 69px; }
+.work-gallery { padding-bottom: clamp(64px, 7vw, 112px); }   /* 64px phones → ~100px at 1440 before the CTA divider */
 .filters {
   display: flex;
   flex-wrap: wrap;
