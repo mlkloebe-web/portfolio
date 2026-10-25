@@ -27,7 +27,7 @@ if (menuToggle && menu && typeof menu.showModal === 'function') {
   });
 }
 
-// Additional work filters
+// Work gallery filters
 const filters = document.querySelector('.filters');
 const gridItems = document.querySelectorAll('.work-grid__item');
 const filterStatus = document.getElementById('filter-status');

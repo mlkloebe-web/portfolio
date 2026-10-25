@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinema Captioning | Madison Kloeber</title>
+  <meta name="description" content="Case study in progress: designing more accessible cinema captioning for Deaf and hard-of-hearing moviegoers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Nunito+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon and app icons -->
+  <link rel="icon" type="image/png" href="favicon-package/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon-package/favicon.svg">
+  <link rel="shortcut icon" href="favicon-package/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-package/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Madison Kloeber">
+  <link rel="manifest" href="favicon-package/site.webmanifest">
+
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="case-page">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="images/logo-dark.svg" alt="Madison Kloeber, home" width="201" height="24">
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav-list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <img src="images/menu.svg" alt="" width="48" height="48">
+    </button>
+  </header>
+
+  <!-- MOBILE MENU: full-screen overlay opened by .menu-toggle (phone layout only) -->
+  <dialog class="menu-overlay" id="mobile-menu" aria-label="Menu" tabindex="-1">
+    <div class="menu-overlay__header">
+      <a class="logo" href="index.html">
+        <img src="images/logo-navy.svg" alt="Madison Kloeber, home" width="201" height="24">
+      </a>
+      <button class="menu-close" type="button" aria-label="Close menu">
+        <img src="images/menu-close-navy.svg" alt="" width="48" height="48">
+      </button>
+    </div>
+
+    <nav class="menu-overlay__nav" aria-label="Mobile">
+      <ul class="menu-overlay__list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer site-footer--menu">
+      <a class="logo" href="index.html">
+        <img src="images/logo-navy-small.svg" alt="Madison Kloeber, home" width="161" height="19">
+      </a>
+
+      <nav aria-label="Menu footer">
+        <ul class="footer-list" role="list">
+          <li><a href="index.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="resume.pdf">Résumé <span class="visually-hidden">(PDF)</span></a></li>
+        </ul>
+      </nav>
+
+      <ul class="social" role="list">
+        <li>
+          <a href="mailto:studio@madisonkloeber.com">
+            <img src="images/icon-mail.svg" alt="Email" width="40" height="40">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
+            <img src="images/icon-linkedin.svg" alt="LinkedIn" width="40" height="40">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </dialog>
+
+  <main id="main">
+
+    <article class="case-study" aria-labelledby="case-title">
+
+      <!-- CASE HERO -->
+      <header class="case-hero">
+        <a class="case-hero__back" href="index.html#featured-work">Featured Work</a>
+        <h1 id="case-title" class="case-hero__title">Cinema Captioning</h1>
+        <ul class="work__tags" role="list">
+          <li class="work__tag">Accessibility Research</li>
+          <li class="work__tag">UX Design</li>
+        </ul>
+        <p class="case-hero__summary">For my graduate independent study at Arizona State University, I’m exploring how captioning could be made more accessible and usable for Deaf and hard-of-hearing moviegoers in theatrical environments in the U.S.</p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Role</dt>
+            <dd>Designer &amp; Researcher</dd>
+          </div>
+          <div>
+            <dt>Type</dt>
+            <dd>Graduate Independent Study, Arizona State University</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Accessibility · UX Design · Research</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2027</dd>
+          </div>
+        </dl>
+      </header>
+
+      <!-- TODO: hero image; add alt text describing it -->
+      <div class="case-figure" aria-hidden="true"></div>
+
+      <!-- Placeholder prompts (.case-todo) mark copy still to write -->
+
+      <!-- ABOUT THE STUDY -->
+      <h2 id="study-part-heading" class="case-part">About the Study</h2>
+
+      <section class="case-section" aria-labelledby="question-heading">
+        <h3 id="question-heading">The question</h3>
+        <div class="case-section__body">
+          <p>How might cinema captioning be designed to provide a better experience for Deaf and hard-of-hearing moviegoers while working within the practical constraints of theatrical exhibition?</p>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="context-heading">
+        <h3 id="context-heading">The context</h3>
+        <div class="case-section__body">
+          <p>Movie theaters have different technical, spatial and operational considerations than personal viewing environments like streaming platforms. Any potential solution in theatrical environments needs to consider not only the captions themselves, but how viewers access and interact with them during an exhibition.</p>
+          <p>This project explores that problem through research and design.</p>
+        </div>
+      </section>
+
+      <!-- RESEARCH & DESIGN -->
+      <h2 id="research-design-part-heading" class="case-part">Research &amp; Design</h2>
+
+      <section class="case-section" aria-labelledby="research-heading">
+        <h3 id="research-heading">Areas of focus</h3>
+        <div class="case-section__body">
+          <h4>Understanding the viewing experience</h4>
+          <p>The research phase focuses on understanding the existing captioning experience and the challenges that can affect accessibility in theatrical environments:</p>
+          <ul>
+            <li>Existing cinema captioning methods</li>
+            <li>Accessibility considerations for Deaf and hard-of-hearing audiences</li>
+            <li>The relationship between captions and the cinematic image</li>
+            <li>Practical constraints within movie theaters</li>
+            <li>Opportunities for improving the viewing experience</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="prototyping-heading">
+        <h3 id="prototyping-heading">Prototyping</h3>
+        <div class="case-section__body">
+          <h4>Translating research into design concepts</h4>
+          <p>The project will explore potential solutions through low- and high-fidelity prototypes, which will allow me to examine how different approaches affect the relationship between the viewer, captions and the film.</p>
+          <!-- TODO: Figma wireframes and prototypes once developed -->
+          <div class="case-figure" aria-hidden="true"></div>
+          <p class="case-back"><a class="case-hero__back" href="index.html#featured-work">Back to Featured Work</a></p>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- CTA: invites study input, not participant sign-ups; switch to IRB-approved recruitment wording once approved -->
+    <section class="cta cta--split" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Shape the Study</h2>
+      <div class="cta__body">
+        <p class="cta__text">This study is currently taking shape, and I want it shaped by the people it’s for. If you’re Deaf or hard of hearing and have experiences with captioning at the movies, good or bad, I’d love to hear from you. I’m also eager to connect with people who work in theatrical exhibition or accessibility. Research begins spring 2027.</p>
+        <div class="cta__links">
+          <a class="cta__link" href="mailto:mlkloebe@asu.edu?subject=Cinema%20Captioning%20study">Email Me About the Study</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <a class="logo logo--footer" href="index.html">
+      <img src="images/logo-dark.svg" alt="Madison Kloeber, home" width="201" height="24">
+    </a>
+
+    <nav aria-label="Footer">
+      <ul class="footer-list" role="list">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- TODO: add resume.pdf to the site root -->
+        <li><a href="resume.pdf">Résumé <span class="visually-hidden">(PDF)</span></a></li>
+      </ul>
+    </nav>
+
+    <ul class="social" role="list">
+      <li>
+        <a href="mailto:studio@madisonkloeber.com">
+          <img src="images/icon-mail.svg" alt="Email" width="48" height="48">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/madison-kloeber-554b70267" rel="noopener">
+          <img src="images/icon-linkedin.svg" alt="LinkedIn" width="48" height="48">
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+</body>
+</html>
