@@ -55,3 +55,16 @@ if (filters && gridItems.length) {
     });
   });
 }
+
+// Contact form: open the visitor's email app with the message filled in
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(contactForm);
+    const subject = `Portfolio inquiry from ${data.get('name')}`;
+    const body = `${data.get('message')}\n\n${data.get('name')}\n${data.get('email')}`;
+    window.location.href = `mailto:studio@madisonkloeber.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+}

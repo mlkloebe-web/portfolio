@@ -321,15 +321,26 @@ img { height: auto; }
   align-self: start;
   width: fit-content;
   margin-bottom: 24px;
-  padding: 4px 8px;
+  padding: 7px 12px;
   border: 1px solid var(--main-headings);
-  border-radius: 6px;
-  font-size: 0.8rem;            /* ~13px */
+  border-radius: 8px;
+  font-size: 1rem;              /* 16px */
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.022em;
   color: var(--main-headings);
 }
+
+/* Several tags on one project: a single row, so the card's subgrid rows still line up */
+.work__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-self: start;
+  margin-bottom: 24px;
+}
+.work__tags .work__tag { margin-bottom: 0; }
+.case-hero .work__tags { margin-bottom: 0; }
 
 .work__text {
   max-width: 60ch;
@@ -466,20 +477,24 @@ img { height: auto; }
   color: var(--eyebrow);
 }
 .about__lead {
-  font-size: var(--text-h2);   /* 32px → 44px */
+  font-size: clamp(1.875rem, 1.1rem + 2vw, 2.5rem);   /* 30px → 40px; a step under h2 so it sets in two lines */
   font-weight: 600;
   line-height: 1.4;
-  letter-spacing: -0.03em;        /* -1.32px @44px */
+  letter-spacing: -0.03em;        /* -1.2px @40px */
   color: var(--heading-dark);
-  padding-right: 320px;
+  text-wrap: pretty;              /* no one-word last line */
+  max-width: calc((100% - 2 * var(--gap)) / 3 + var(--gap) + 46rem);   /* ends where the bio text ends */
 }
+/* Same column grid as the clients band: photo in column 1, text starts where the client list does */
 .about__body {
   display: grid;
-  grid-template-columns: minmax(0, min(46rem, 55%)) minmax(0, 1fr);  /* text capped, photos take the rest */
-  gap: 48px;
-  align-items: start;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  gap: 48px var(--gap);
+  align-items: stretch;
 }
 .about__text {
+  grid-column: 2 / -1;
+  max-width: 46rem;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: var(--text-lead);   /* same size as Home's paragraphs */
@@ -491,20 +506,27 @@ img { height: auto; }
 .about__text p:last-child { margin-bottom: 0; }
 
 .about__photos-wrap {
-  position: sticky;      /* photos stay in view while the long text scrolls */
-  top: 24px;
+  grid-column: 1;
+  grid-row: 1;
+  margin-right: calc(clamp(48px, 7vw, 112px) - var(--gap));   /* ~100px from photo to text at 1440 */
+  position: relative;    /* photo fills the row, so its height matches the text beside it */
 }
-.about__photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(12px, 1.5vw, 24px);
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.about__photos-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.about__photos li { aspect-ratio: 3 / 4; }
-.about__photos img { width: 100%; height: 100%; object-fit: cover; }
 .bw-image { filter: grayscale(100%); }
+
+/* Below 1440px the bio wraps taller than a 3:4 headshot can match, so text and photo stack */
+@media (max-width: 1439px) {
+  .about__body { grid-template-columns: minmax(0, 1fr); }
+  .about__text { grid-column: auto; }   /* stacked: text first */
+  .about__photos-wrap { grid-column: auto; grid-row: auto; margin-right: 0; max-width: 46rem; }   /* same width as the text */
+  .about__photos-wrap img { position: static; height: auto; aspect-ratio: 3 / 4; }   /* photo keeps its own shape */
+}
 
 /* Clients band */
 /* Same column grid as Home's gallery/CTA: heading in column 1, list in the rest */
@@ -650,8 +672,23 @@ img { height: auto; }
   gap: var(--gap);
   padding: 60px var(--pad-x);
 }
-.case-section + .case-section { border-top: 2px solid var(--main-headings); }
-.case-section h2 {
+/* Part title (Event Website, Reflection…): full-width band over its sections, styled like Home's "Featured Work" */
+.case-part {
+  padding: 60px var(--pad-x) 0;
+  border-top: 2px solid var(--main-headings);
+  font-family: var(--font-head);
+  font-size: var(--text-h2);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  color: var(--heading-dark);
+}
+.case-figure + .case-part { margin-top: 60px; }
+/* Reflection: heading and text side by side, like the Let's Connect CTA */
+.case-section--reflection { border-top: 2px solid var(--main-headings); }
+.case-section--reflection .case-part { padding: 0; border: 0; }
+.case-part + .case-section { padding-top: 40px; }
+.case-section h3 {
   font-family: var(--font-head);
   font-size: var(--text-h3);
   font-weight: 600;
@@ -660,15 +697,39 @@ img { height: auto; }
   text-transform: uppercase;
   color: var(--heading-dark);
 }
-.case-section h3 {
-  margin: 32px 0 12px;
+.case-section h4 {
+  margin: 40px 0 12px;
   font-family: var(--font-head);
-  font-size: 1.1rem;
+  font-size: 1.5rem;    /* 24px; a step above body text */
   font-weight: 600;
   letter-spacing: -0.022em;
   color: var(--heading-dark);
 }
-.case-section h3:first-child { margin-top: 0; }
+.case-section h4:first-child { margin-top: 0; }
+.case-section__body > * + * { margin-top: 1em; }
+.case-section__body > h4 + p { margin-top: 0; }
+.case-section__body ul {
+  max-width: 65ch;
+  padding-left: 1.25em;
+  list-style: disc;
+  font-size: var(--text-lead);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.022em;
+  color: var(--eyebrow);
+}
+.case-section__body li + li { margin-top: 0.4em; }
+.case-section__body .case-figure { margin: 24px 0 0; }   /* image placeholder inside a section: no page margins */
+.case-section__body .case-figure-wrap .case-figure { margin-top: 0; }
+.case-figure-wrap { margin-top: 24px; }
+.case-figure-wrap figcaption {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  color: var(--eyebrow);
+}
+.case-section__body .case-back { margin-top: 32px; }
 .case-section__body p {
   max-width: 65ch;
   font-size: var(--text-lead);
@@ -686,6 +747,7 @@ img { height: auto; }
   font-style: italic;
   color: #555;
 }
+.case-section__body span.case-todo { padding: 0 4px; border-radius: 4px; font-size: inherit; }   /* inline placeholder within a sentence */
 
 /* ---------- Contact page ---------- */
 .contact-hero {
@@ -873,15 +935,15 @@ img { height: auto; }
   .hero__image { order: -1; height: clamp(327px, 50vw, 450px); }
   .hero__content { padding: 56px var(--pad-x); gap: 32px; }
   .work { padding-top: 56px; }
-  .about__lead { padding-right: 160px; }
 
   .contact-hero { padding: 56px var(--pad-x); }
   .contact-hero__inner { max-width: none; }
 
-  .about__body { grid-template-columns: 1fr; gap: 32px; }
-  .about__photos-wrap { position: static; }
+  .about__body { gap: 32px; }
 
   .case-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-part { padding-top: 48px; }
+  .case-section h4 { font-size: 1.25rem; }   /* 20px: stays a step under the 24px h3 */
   .case-section { grid-template-columns: 1fr; gap: 24px; padding-block: 48px; }
 }
 
@@ -1032,7 +1094,6 @@ body:has(.menu-overlay[open]) { overflow: hidden; }   /* lock the page behind it
   .filters__btn { min-height: 44px; padding: 0 8px; }
 
   /* Project tags: larger for small screens (still labels, not buttons) */
-  .work__tag { padding: 7px 12px; border-radius: 8px; font-size: 1rem; }   /* 16px */
   .case-hero { padding: 40px var(--pad-x); }
   .case-hero__back { display: inline-flex; align-items: center; min-height: 44px; padding-block: 0; }   /* 44px tap target */
   .case-hero .cta__link { align-self: stretch; text-align: center; }   /* full-width button, like Submit */
@@ -1051,7 +1112,6 @@ body:has(.menu-overlay[open]) { overflow: hidden; }   /* lock the page behind it
   .collaborate__form { grid-column: 1 / -1; }   /* stacked, full width */
   .contact-form__submit { align-self: stretch; }   /* full width on phones */
   .contact-hero__links a { display: inline-flex; align-items: center; min-height: 44px; padding-block: 0; }   /* 44px tap targets */
-  .about__lead { padding-right: 0; }
 
   /* About: Home's phone rhythm */
   .about { padding-block: 40px; gap: 32px; }
