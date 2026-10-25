@@ -151,7 +151,7 @@ img { height: auto; }
   text-decoration: none;
 }
 .nav-list a:hover,
-.nav-list a[aria-current="page"] {
+.nav-list a[aria-current] {   /* "page" on Home/About/Contact, "true" for Portfolio on case studies */
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 8px;
