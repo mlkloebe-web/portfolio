@@ -469,6 +469,7 @@ img { height: auto; }
   gap: 48px;
   padding: 64px var(--pad-x);
 }
+.about + .cta { border-top: 0; }   /* the About section's bottom border already divides them */
 .about__intro {
   display: flex;
   flex-direction: column;
