@@ -320,7 +320,7 @@ img { height: auto; }
   width: fit-content;
   margin-bottom: 24px;
   padding: 7px 12px;
-  border: 1px solid var(--main-headings);
+  border: 1.5px solid var(--main-headings);
   border-radius: 8px;
   font-size: 1rem;              /* 16px */
   font-weight: 600;
